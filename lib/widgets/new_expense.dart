@@ -19,7 +19,7 @@ class _NewExpensesState extends State<NewExpense> {
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
   DateTime? _selectedDate;
-  Catergory _selectedCategory = Catergory.leisure;
+  Category _selectedCategory = Category.leisure;
 
   void dispose() {
     _titleController.dispose();
@@ -68,7 +68,7 @@ class _NewExpensesState extends State<NewExpense> {
           title: _titleController.text,
           amount: enteredAmount,
           date: _selectedDate!,
-          catergory: _selectedCategory),
+          category: _selectedCategory),
     );
     Navigator.pop(context);
   }
@@ -122,7 +122,7 @@ class _NewExpensesState extends State<NewExpense> {
             children: [
               DropdownButton(
                   value: _selectedCategory,
-                  items: Catergory.values
+                  items: Category.values
                       .map(
                         (category) => DropdownMenuItem(
                           value: category,
